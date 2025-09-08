@@ -1,0 +1,42 @@
+{
+  "name": "haaju-project",
+  "version": "1.0.0",
+  "description": "Haaju Project Management Platform - Full Stack Application",
+  "private": true,
+  "workspaces": [
+    "haaju_backend",
+    "haaju_frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd haaju_backend && python manage.py runserver",
+    "dev:frontend": "cd haaju_frontend && npm run dev",
+    "build": "npm run build:frontend",
+    "build:frontend": "cd haaju_frontend && npm run build",
+    "start": "npm run start:frontend",
+    "start:frontend": "cd haaju_frontend && npm run start",
+    "install:all": "npm install && cd haaju_frontend && npm install",
+    "clean": "rm -rf node_modules && cd haaju_frontend && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "project-management",
+    "django",
+    "nextjs",
+    "typescript",
+    "tailwindcss",
+    "fullstack"
+  ],
+  "author": "Haaju Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/haaju/haaju-project.git"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}
